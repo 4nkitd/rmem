@@ -1,9 +1,11 @@
 package main
 
-import "rmem/types"
+import (
+	"rmem/entity"
+)
 
 type RMEM struct {
-	Nodes []types.Node
+	Nodes []entity.Node
 }
 
 func (r *RMEM) CreateNode(nodeName string) (bool, string) {
@@ -12,7 +14,7 @@ func (r *RMEM) CreateNode(nodeName string) (bool, string) {
 		return false, "Node By This Name Already Exists"
 	}
 
-	tmpNode := types.Node{
+	tmpNode := entity.Node{
 		Name: nodeName,
 	}
 
